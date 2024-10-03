@@ -1,0 +1,28 @@
+1.open ecplise
+2.open file ->new java project
+3. projectName : WordCount
+4.next Libraries->Add External Jars--->file system --->usr ----> lib ---->hadoop --->.jar files select all ->ok
+5.libraries --> Add external jars -->client ---> Add .jar files ->finish
+6.WordCount ---> scr (Right click  - new -  class)
+7.class name is project name (WordCount) ---> finish
+8.paste the code
+9. again go to WordCount Project -> Rightclick ->export ----> jarfiles -->browse --->cloudera ---> replace name as WordCount.jar
+                                                                |
+                                                              next
+10.Go to terminal
+11.create directory $mkdir Asec
+12 $ cd Asec
+14 $ cat >fill.txt
+this one thing 
+this is
+clt^z
+15 $ cat fill.txt
+16.$ hadoop fs -mkdir Asec
+17.$ hadoop fs -mkdir /Asec
+18.$ hadoop fs -ls /Asec
+19.$ hadoop fs -put /home/cloudera/Asec/fill.txt /Asec/
+20.$ hadoop fs -cat /Asec/fill.txt
+21. $ hadoop jar /home/cloudera/WordCount.jar WordCount /Asec/fill.txt /output
+22.hadoop fs -ls /
+23.hadoop fs -ls /output
+24. hadoop fs -cat /output/part-r-m-00000
