@@ -1,0 +1,21 @@
+#hive 
+>> hive
+>> show databases;
+>> create database dtabasename;
+>> use database_name;
+>> create table table_name(no:int,name:string) row format delimited fields terminated by ',';
+>> load data local inpath '/home/cloudera/file1.txt' overwrite into table table_name;
+>> select * from table_namw;
+>> alter table tablename add columns(regno:string);
+>> select * from table_name;
+>> insert into table table_name values(5,'Manju','4542');
+>> select * from table_name;
+>> alter table table_name replace colums(no:int,name:String);
+>> select * from table_name;
+>> create view view_name as select * from table_name where no>2;
+>> select * from view_name;
+>> drop view view_name;
+>> create index index_name on table table_name(no) as 'org.apache.hive.ql.index.compact.CompactIndexHandler' with deferred rebuild;
+>> show indexes on table_name;
+>> drop index index_name on table_name;
+>> drop table table_name;
