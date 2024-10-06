@@ -1,0 +1,40 @@
+Pig :
+first create a lacal file
+>$ cat >file1.txt
+1,Manju,4542,AI
+2,Jyoshna,4321,AI
+3,Chinni,1424,MEC
+4,Kishore,1420,ML
+clt^z
+>$cat file1.txt
+
+Another file
+> $ cat >file2.txt
+4,Kiran,4321,ECE
+5,Suresh,4122,EEE
+2,naresh,1234,CIVIL
+clt^z
+
+
+to enter into pig shell
+>$ pig -x local
+>$ grunt>> s= load '/home/cloudera/file1.txt' using PigStorage(',') as (no:int,name:chararray,reg:chararray,branch:chararray);
+>> dump s;
+>> sort = order s by id ASEC;
+>> dump sort;
+>> fil = filter s by branch = 'AI';
+>> dump fil;
+>> group = group s by branch;
+>> dump group;
+>> s1 = load 'home/cloudera/file2.txt' using PigStorage(',') as (no:int,name:chararray,reg:chararray,branch:chararray);
+>> dump s1;
+>> sjoin = join s by no,s2 by no;
+>> dump sjoin;
+>> equijoin = join s by no,s2 by no;
+>> dump equijoin;
+>> leftout =  join s by no LEFT OUTER, s2 by no;
+>> dump leftout;
+>> rightout = join s by RIGHT OUTER,s2 by no;
+>>dump rightout;
+>> proj = FOREACH s GENERATE no,name;
+>> dump proj;
