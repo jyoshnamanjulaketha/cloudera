@@ -1,0 +1,21 @@
+HBASE
+>> mysql -r root -p
+mysql> show databases;
+mysql> use database;
+mysql > show tables;
+mysql> describe customers;
+
+in other terminal:
+>> hbase shell
+>> list
+
+
+in other terminal
+>> sqoop import --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --tables customers --hbase-tables customers --column-family cf1 --hbase-key-row customer_id --hbase-create-table --fields-terminated-by '|';
+
+
+in second terminal :
+>> scan 'customers'
+
+
+
