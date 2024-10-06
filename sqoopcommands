@@ -1,0 +1,23 @@
+in first terminal:
+>> mysql -u root -p
+mysql> show databases;
+mysql> use database_name;
+mysql> show tables;
+mysql> describe table_nam;
+
+
+in other terminal:
+>> sqoop list-databases --connect jdbc:mysql://localhost/ --username root --password cloudera;
+>> sqoop list-tables --connect jdbc:mysql://localhost/retail_db --username root --password cloudera;
+
+with primary key:
+
+>> sqoop import --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --tables customers --fields-terminated-by '|';
+>> hadoop fs -ls /
+>> hadoop fs cat /path
+
+>> hadoop fs -rmr /user/cloudera/customers
+>> sqoop import --connect jdbc:mysql://localhost/retail_db --username root --password cloudera --tables customers --columns 'customer_id' --fields-terminated-by '|';
+>> 
+
+
