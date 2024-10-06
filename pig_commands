@@ -38,3 +38,21 @@ to enter into pig shell
 >>dump rightout;
 >> proj = FOREACH s GENERATE no,name;
 >> dump proj;
+
+
+
+
+
+
+
+### WordCount using pig
+
+>> pig -x local
+>> stu = load 'file1.txt' using PigStorage(',') as (no:int,name:chararray,reg:chararray,branch:chararray);
+>> dump stu;
+>> token = FOREACH stu GENERATE FLATTEN((TOKENIZE(name));
+>> groups = GROUP token by token;
+>>dump grop;
+>> count = FOREACH groups GENERATE group, count(token); 
+>> dump count;
+
