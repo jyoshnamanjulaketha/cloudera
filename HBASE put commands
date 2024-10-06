@@ -1,0 +1,40 @@
+HBASE PUT commands 
+
+
+>>> hbase shell
+>>> list
+>> create 'employee' ,{NAME => 'cf1'}
+>> put 'employee', '1','cf1:name' ,'Manju'
+>> put 'empoyee', '1','cf1:age',19
+>> put 'employee', '2','cf1:name', 'Jyoshna'
+>> put 'employee','2','cf1:age',18
+>> put 'employee','3','cf1:name','Durga'
+>> put 'employee','3','cf1:age',20
+>> scan 'employee'
+>> is_enabled 'employee'
+>>disable 'employee'
+>> is_disabled 'employee'
+>> enable 'employee'
+>> is_enabled 'employee'
+>> exists 'employee'
+>> describe 'employee'
+>> alter 'employee' ,{NAME=>cf1,VERSIONS=>3}
+
+
+
+
+
+>> create 'employee' , {NAME => 'cf1'}
+>> put 'employee' , '1' , 'cf1:name', 'Manju'
+>> put 'empoyee', '1','cf1:age',19
+>> put 'employee', '2','cf1:name', 'Jyoshna'
+>> put 'employee','2','cf1:age',18
+>> put 'employee','3','cf1:name','Durga'
+>> put 'employee','3','cf1:age',20
+>> scan 'employee'
+>> get 'employee' ,'1',{columns =>  ['cf1:name']}
+>> count 'employee'
+>> delete 'employee','1','cf1:name'
+>> deleteall 'employee','2'
+
+
